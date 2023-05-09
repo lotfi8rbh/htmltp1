@@ -6,8 +6,7 @@ import Patient from "views/admin/patient";
 import Paramétres from "views/admin/paramétres";
 import Agenda from "views/admin/agenda";
 import RTLDefault from "views/rtl/default";
-
-// Auth Imports
+import ForgetPwd from "views/auth/ForgetP";
 import SignIn from "views/auth/SignIn";
 
 // Icon Imports
@@ -48,7 +47,6 @@ const routes = [
     layout: "/admin",
     path: "agenda",
     icon: <IoCalendarNumber className="h-6 w-6" />,
-
     component: <Agenda />,
   },
   {
@@ -56,15 +54,15 @@ const routes = [
     layout: "/admin",
     path: "consultation",
     icon: <RiStethoscopeLine className="h-6 w-6" />,
-    component: <SignIn />,
   },
   {
     name: "Rendez Vous",
     layout: "/admin",
     path: "rendez-vous",
     icon: <MdAssignmentTurnedIn className="h-6 w-6" />,
-    component: <SignIn />,
   },
+
+
   {
     name: "Paramétres",
     layout: "/admin",
@@ -79,6 +77,14 @@ const routes = [
     icon: <MdLock className="h-6 w-6" />,
     component: <SignIn />,
   },
+
+  {
+    path: "forget-password",
+    layout: "/auth",
+    component: <ForgetPwd />,
+  },
+
+
   {
     name: "RTL Admin",
     layout: "/admin",

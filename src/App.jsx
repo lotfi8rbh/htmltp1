@@ -1,16 +1,22 @@
 import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
-import RtlLayout from "layouts/rtl";
-import AdminLayout from "layouts/admin";
-import AuthLayout from "layouts/auth";
+import LPage from "./views/LPage";
+import Auth from "./layouts/auth";
+import AdminLayout from "./layouts/admin";
+import RtlLayout from "./layouts/rtl";
+import SIform from "views/auth/SignUpForm";
+
 const App = () => {
   return (
     <Routes>
-      <Route path="auth/*" element={<AuthLayout />} />
+
+      <Route path="/sign-up" element={<SIform />} />
+      <Route path="auth/*" element={<Auth />} />
       <Route path="admin/*" element={<AdminLayout />} />
       <Route path="rtl/*" element={<RtlLayout />} />
-      <Route path="/" element={<Navigate to="/admin" replace />} />
+      <Route path="/" element={<LPage />} />
+
     </Routes>
   );
 };

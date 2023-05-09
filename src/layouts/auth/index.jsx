@@ -1,13 +1,15 @@
 import { Link, Routes, Route, Navigate } from "react-router-dom";
 import routes from "routes.js";
 import FixedPlugin from "components/fixedPlugin/FixedPlugin";
+import React from "react";
+import ForgetPwd from "views/auth/ForgetP";
 
 export default function Auth() {
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
       if (prop.layout === "/auth") {
         return (
-          <Route path={`/${prop.path}`} element={prop.component} key={key} />
+          <Route path={`/${prop.path}`} element={React.cloneElement(prop.component)} key={key} />
         );
       } else {
         return null;
@@ -40,10 +42,11 @@ export default function Auth() {
                     <p className="ml-3 text-sm text-gray-600">
                       Retour vers l'acceuil
                     </p>
-                  </div>
+                  </div>  
                 </Link>
                 <Routes>
                   {getRoutes(routes)}
+                  <Route path="/forget-password" element={<ForgetPwd />} />
                   <Route
                     path="/"
                     element={<Navigate to="/auth/sign-in" replace />}
