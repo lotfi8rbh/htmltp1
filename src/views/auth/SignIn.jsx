@@ -70,12 +70,14 @@ export default function SignIn() {
           <span className=" text-sm font-medium text-navy-700 dark:text-gray-600">
             Pas encore inscrit ?
           </span>
-          <a
-            href=" "
-            className="ml-1 text-sm font-medium text-brand-500 hover:text-brand-600 dark:text-white"
-          >
-            Créez un compte
-          </a>
+          <Link to="/auth/sign-up">
+            <a
+              href=" "
+              className="ml-1 text-sm font-medium text-brand-500 hover:text-brand-600 dark:text-white"
+            >
+              Créez un compte
+            </a>
+          </Link>
         </div>
       </div>
     </div>

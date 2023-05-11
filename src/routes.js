@@ -2,13 +2,14 @@ import React from "react";
 
 // Admin Imports
 import DashboardPage from "views/admin/default";
-import Patient from "views/admin/patient";
+import PatientListPage from "views/admin/patient/components/PatientList";
 import Paramétres from "views/admin/paramétres";
 import Agenda from "views/admin/agenda";
 import RTLDefault from "views/rtl/default";
 import ForgetPwd from "views/auth/ForgetP";
 import SignIn from "views/auth/SignIn";
-
+import SIform from "views/auth/SignUpForm";
+import AjouterPatient from "views/admin/patient/components/AddPatient";
 // Icon Imports
 import {
   MdHome,
@@ -26,6 +27,7 @@ import {
   IoCalendarNumber
 } from "react-icons/io5";
 
+
 const routes = [
   {
     name: "Acceuil",
@@ -36,10 +38,10 @@ const routes = [
   },
   {
     name: "Patient",
-    layout: "/admin",
+    layout: "/user",
     path: "patient",
     icon: <MdPeopleAlt className="h-6 w-6" />,
-    component: <Patient />,
+    component: <PatientListPage />,
     secondary: true,
   },
   {
@@ -79,11 +81,19 @@ const routes = [
   },
 
   {
+    name: "Forget Password",
     path: "forget-password",
     layout: "/auth",
     component: <ForgetPwd />,
   },
 
+
+  {
+    name: "Sign Up",
+    path: "sign-up",
+    layout: "/auth",
+    component: <SIform />,
+  },
 
   {
     name: "RTL Admin",
@@ -92,6 +102,13 @@ const routes = [
     icon: <MdHome className="h-6 w-6" />,
     component: <RTLDefault />,
   },
+  {
+    name: "AJOUTER",
+    layout: "/admin",
+    path: "ajouter-patient",
+    component: AjouterPatient,
+  },
+
 
 ];
 export default routes;

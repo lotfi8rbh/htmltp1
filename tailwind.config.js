@@ -115,7 +115,7 @@ module.exports = {
         darkinset: "0px 4px 4px inset",
       },
       borderRadius: {
-        primary: "20px",
+        primary: "10px",
       },
     },
     screens: {
@@ -328,7 +328,6 @@ module.exports = {
 
   plugins: [
     require('flowbite/plugin')
-  ]
+  ],
 
 };
-
