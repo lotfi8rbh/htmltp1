@@ -5,11 +5,11 @@ import Sidebar from "components/sidebar";
 import Footer from "components/footer/Footer";
 import routes from "routes.js";
 
-export default function Admin(props) {
+export default function AdminLayout(props) {
   const { ...rest } = props;
   const location = useLocation();
   const [open, setOpen] = React.useState(true);
-  const [currentRoute, setCurrentRoute] = React.useState("Main Dashboard");
+  const [currentRoute, setCurrentRoute] = React.useState("Acceuil");
 
   React.useEffect(() => {
     window.addEventListener("resize", () =>
@@ -21,7 +21,7 @@ export default function Admin(props) {
   }, [location.pathname]);
 
   const getActiveRoute = (routes) => {
-    let activeRoute = "Main Dashboard";
+    let activeRoute = "Acceuil";
     for (let i = 0; i < routes.length; i++) {
       if (
         window.location.href.indexOf(
