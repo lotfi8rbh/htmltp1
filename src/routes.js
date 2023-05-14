@@ -9,7 +9,7 @@ import RTLDefault from "views/rtl/default";
 import ForgetPwd from "views/auth/ForgetP";
 import SignIn from "views/auth/SignIn";
 import SIform from "views/auth/SignUpForm";
-import AjouterPatient from "views/admin/patient/components/AddPatient";
+
 // Icon Imports
 import {
   MdHome,
@@ -26,6 +26,7 @@ import {
 import {
   IoCalendarNumber
 } from "react-icons/io5";
+import ConsultationPage from "views/admin/consultation";
 
 
 const routes = [
@@ -56,6 +57,7 @@ const routes = [
     layout: "/admin",
     path: "consultation",
     icon: <RiStethoscopeLine className="h-6 w-6" />,
+    component: <ConsultationPage />,
   },
   {
     name: "Rendez Vous",
@@ -101,12 +103,6 @@ const routes = [
     path: "rtl",
     icon: <MdHome className="h-6 w-6" />,
     component: <RTLDefault />,
-  },
-  {
-    name: "AJOUTER",
-    layout: "/admin",
-    path: "ajouter-patient",
-    component: AjouterPatient,
   },
 
 
